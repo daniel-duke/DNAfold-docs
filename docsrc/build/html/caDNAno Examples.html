@@ -86,10 +86,11 @@
 <p>DNAfold requires caDNAno files (in the json format) to define the structure of the DNA origami to be simulated. For more information on caDNAno, how to install it, and tutorials on how to use it, please see <a class="reference external" href="https://cadnano.org/index.html">this webpage</a>. For additional guidance, there are excellent tutorial videos available online that outline the most critical requirements for designing DNA origami structures with caDNAno.</p>
 <p>In order to simulate DNA origami using DNAfold, the caDNAno design must fulfill two requirements:</p>
 <ul class="simple">
-<li><p>The scaffold strand must contain a break at some point in the strand. This applies to both linear and circular scaffolds. Whether the scaffold is actually circular can be specified in the “input.txt” file, as explained in <a class="reference internal" href="Parameter%20Descriptions.html"><span class="doc">Parameter Descriptions</span></a>.</p></li>
-<li><p>Each crossover and strand break must be separated by a multiple of 8 bp. This is becuase DNAfold coarsens the DNA into beads, each of which represent exactly 8 bp, no more, no less. Thus, if a caDNAno design contains a crossover or strand break at a non-integer multiple of 8 bp away from another crossover or strand break, DNAfold will attempt to place a bead over the crossover or strand break, causing the code to throw an error.</p></li>
+<li><p>For computational reasons, the scaffold strand must contain a break at some point in the strand. This applies to both linear and circular scaffolds. Whether the scaffold is actually circular or linear can be specified in the “input.txt” file, as explained in <a class="reference internal" href="Parameter%20Descriptions.html"><span class="doc">Parameter Descriptions</span></a>.</p></li>
+<li><p>Each crossover and strand break must be separated by a multiple of 8 bp. This is because DNAfold coarsens the DNA into beads, each of which represent exactly 8 bp, no more, no less. If a caDNAno design contains a crossover or strand break at a non-integer multiple of 8 bp away from another crossover or strand break, DNAfold will attempt to place a bead over the crossover or strand break, causing the code to throw an error.</p></li>
 </ul>
-<p>To make adhering to the multiple of 8 rule simple when designing a caDNAno structure, first choose the square grid. Notice that becuase square DNA origamis naturally have crossover opportunities every 8 bp, the grid in caDNAno has bold vertical bars every 8 bp. When drawing your scaffold and staple strands on the grid, simply ensure all crossovers and strand breaks fall across one of these bold bars.</p>
+<p>To make adherence to the multiple of 8 rule simple when designing a DNA origami structure, first choose the square grid option in caDNAno. Notice that becuase square lattice origamis naturally have crossover opportunities at multiples of 8 bp, the grid in caDNAno has bold vertical bars every 8 bp. When drawing your scaffold and staple strands on the grid, simply ensure all crossovers and strand breaks fall across one of these bold bars.</p>
+<p>Copies of the correct examples discussed below are located in the “examples” folder within the DNAfold GitHub repository. Corresponding “input.txt” files are also provided.</p>
 <section id="example-incorrect-2d-structure">
 <h2>Example: Incorrect 2D Structure<a class="headerlink" href="#example-incorrect-2d-structure" title="Link to this heading"></a></h2>
 <p><img alt="image" src="_images/donut_bad.png" /></p>
@@ -104,7 +105,7 @@
 <section id="example-correct-2d-structure">
 <h2>Example: Correct 2D Structure<a class="headerlink" href="#example-correct-2d-structure" title="Link to this heading"></a></h2>
 <p><img alt="image" src="_images/donut_good.png" /></p>
-<p>This caDNAno structure addresses all of the issues with the first example. Thus, DNAfold would successfully simulate this design.</p>
+<p>This caDNAno structure addresses all of the issues with the first example. Thus, DNAfold can successfully simulate this design.</p>
 </section>
 <section id="example-incorrect-3d-structure">
 <h2>Example: Incorrect 3D structure<a class="headerlink" href="#example-incorrect-3d-structure" title="Link to this heading"></a></h2>
@@ -128,7 +129,7 @@
 </section>
 <section id="example-smile">
 <h2>Example: Smile<a class="headerlink" href="#example-smile" title="Link to this heading"></a></h2>
-<p>This is another example of a more complex structure that could be simulated in DNAfold because it follows the rules described above.</p>
+<p>This is another example of a more complex structure that can be simulated with DNAfold because it follows the rules described above.</p>
 <p><img alt="image" src="_images/smile_good.png" /></p>
 </section>
 </section>
