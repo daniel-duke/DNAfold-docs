@@ -1,1 +1,0 @@
-This repository hosts the documentation for the DNAfold simulation package. For a description of how to use this package, see the website hosted in this respository (daniel-duke.github.io/dnafold-docs). For the actual code, see github.com/marcello-deluca/dnafold.
