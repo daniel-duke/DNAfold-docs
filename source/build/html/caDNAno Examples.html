@@ -1,0 +1,160 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>caDNAno Examples &mdash; DNAfold 2024 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=6fefd858"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            DNAfold
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">caDNAno Examples</a><ul>
+<li><a class="reference internal" href="#example-incorrect-2d-structure">Example: Incorrect 2D Structure</a></li>
+<li><a class="reference internal" href="#example-correct-2d-structure">Example: Correct 2D Structure</a></li>
+<li><a class="reference internal" href="#example-incorrect-3d-structure">Example: Incorrect 3D structure</a></li>
+<li><a class="reference internal" href="#example-correct-3d-structure">Example: Correct 3D structure</a></li>
+<li><a class="reference internal" href="#example-smile">Example: Smile</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">DNAfold</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">caDNAno Examples</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/caDNAno Examples.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cadnano-examples">
+<h1>caDNAno Examples<a class="headerlink" href="#cadnano-examples" title="Link to this heading"></a></h1>
+<p>DNAfold requires caDNAno files (in the json format) to define the structure of the DNA origami to be simulated. For more information on caDNAno, how to install it, and tutorials on how to use it, please see <a class="reference external" href="https://cadnano.org/index.html">this webpage</a>. For additional guidance, there are excellent tutorial videos available online that outline the most critical requirements for designing DNA origami structures with caDNAno.</p>
+<p>In order to simulate DNA origami using DNAfold, the caDNAno design must fulfill two requirements:</p>
+<ul class="simple">
+<li><p>For computational reasons, the scaffold strand must contain a break at some point in the strand. This applies to both linear and circular scaffolds. Whether the scaffold is actually circular or linear can be specified in the “input.txt” file, as explained in <a class="reference internal" href="Parameter%20Descriptions.html"><span class="doc">Parameter Descriptions</span></a>.</p></li>
+<li><p>Each crossover and strand break must be separated by a multiple of 8 bp. This is because DNAfold coarsens the DNA into beads, each of which represent exactly 8 bp, no more, no less. If a caDNAno design contains a crossover or strand break at a non-integer multiple of 8 bp away from another crossover or strand break, DNAfold will attempt to place a bead over the crossover or strand break, causing the code to throw an error.</p></li>
+</ul>
+<p>To make adherence to the multiple of 8 rule simple when designing a DNA origami structure, first choose the square grid option in caDNAno. Notice that becuase square lattice origamis naturally have crossover opportunities at multiples of 8 bp, the grid in caDNAno has bold vertical bars every 8 bp. When drawing your scaffold and staple strands on the grid, simply ensure all crossovers and strand breaks fall across one of these bold bars.</p>
+<p>Copies of the correct examples discussed below are located in the “examples” folder within the DNAfold GitHub repository. Corresponding “input.txt” files are also provided.</p>
+<section id="example-incorrect-2d-structure">
+<h2>Example: Incorrect 2D Structure<a class="headerlink" href="#example-incorrect-2d-structure" title="Link to this heading"></a></h2>
+<p><img alt="image" src="_images/donut_bad.png" /></p>
+<p>This caDNAno structure has several issues that would throw errors in DNAfold.</p>
+<ul class="simple">
+<li><p>As highlighed in the blue circle, a staple strand ends on a non-integer multiple of 8 bp.</p></li>
+<li><p>As highlighed by the black circle, a crossover exists on a non-integer multiple of 8 bp.</p></li>
+<li><p>As highlighed by the red oval, two breaks in the staple strands exist on a non-integer multiple of 8 bp.</p></li>
+<li><p>There is no break in the scaffold.</p></li>
+</ul>
+</section>
+<section id="example-correct-2d-structure">
+<h2>Example: Correct 2D Structure<a class="headerlink" href="#example-correct-2d-structure" title="Link to this heading"></a></h2>
+<p><img alt="image" src="_images/donut_good.png" /></p>
+<p>This caDNAno structure addresses all of the issues with the first example. Thus, DNAfold can successfully simulate this design.</p>
+</section>
+<section id="example-incorrect-3d-structure">
+<h2>Example: Incorrect 3D structure<a class="headerlink" href="#example-incorrect-3d-structure" title="Link to this heading"></a></h2>
+<p><img alt="image" src="_images/4HB_bad.png" /></p>
+<p>This caDNAno structure raises two red flags:</p>
+<ul class="simple">
+<li><p>The offset of the scaffold in the top two helices does not conform to the multiple of 8 rule, and therefore both the scaffold and several staple strands would cause DNAfold to fail.</p></li>
+<li><p>There is no break in the scaffold.</p></li>
+</ul>
+<p>Furthermore, this design exemplifies several design flaws that should be generally avoided when creating DNA origami:</p>
+<ul class="simple">
+<li><p>The light blue staple strand on the far right is less than 16 bp, which is too short.</p></li>
+<li><p>The same light blue staple strand contains a binding domain with less than 8 bp, which is too few.</p></li>
+<li><p>At the scaffold crossover between the two center helices, a break in the staple strands lines up with the scaffold crossover. Thus, there is a complete break in both the helices at this point.</p></li>
+</ul>
+</section>
+<section id="example-correct-3d-structure">
+<h2>Example: Correct 3D structure<a class="headerlink" href="#example-correct-3d-structure" title="Link to this heading"></a></h2>
+<p><img alt="image" src="_images/4HB_good.png" /></p>
+<p>This caDNAno remediates the issues with the above design. Thus, it is compatible with DNAfold.</p>
+</section>
+<section id="example-smile">
+<h2>Example: Smile<a class="headerlink" href="#example-smile" title="Link to this heading"></a></h2>
+<p>This is another example of a more complex structure that can be simulated with DNAfold because it follows the rules described above.</p>
+<p><img alt="image" src="_images/smile_good.png" /></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Daniel Duke.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
