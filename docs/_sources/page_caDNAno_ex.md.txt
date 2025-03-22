@@ -13,7 +13,7 @@ Copies of the correct examples discussed below are located in the examples folde
 
 ## Incorrect 2D Structure
 
-![image](images/donut_bad.png "Example")
+![image](images/donut_bad.png)
 
 This caDNAno structure has several issues that would cause DNAfold to fail.
 
@@ -24,13 +24,13 @@ This caDNAno structure has several issues that would cause DNAfold to fail.
 
 ## Correct 2D Structure
 
-![image](images/donut_good.png "Example")
+![image](images/donut_good.png)
 
 This caDNAno structure addresses all of the issues with the first example. Thus, DNAfold can successfully simulate this design.
 
 ## Incorrect 3D structure
 
-![image](images/4HB_bad.png "Example")
+![image](images/4HB_bad.png)
 
 This caDNAno design raises two red flags:
 
@@ -45,7 +45,7 @@ Furthermore, this design exemplifies several design flaws that should be general
 
 ## Correct 3D structure
 
-![image](images/4HB_good.png "Example")
+![image](images/4HB_good.png)
 
 This caDNAno remediates the issues with the above design. Thus, it is compatible with DNAfold.
 
@@ -53,4 +53,4 @@ This caDNAno remediates the issues with the above design. Thus, it is compatible
 
 This is another example of a more complex structure that can be simulated with DNAfold because it follows the rules described above.
 
-![image](images/smile.png "Example")
+![image](images/smile.png)
