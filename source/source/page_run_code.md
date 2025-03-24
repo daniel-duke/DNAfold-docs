@@ -59,7 +59,7 @@ Finally, run the following command to begin the simulation, making sure to subst
 To run the program in the background and save the standard output to a file, use the following command:
 
 ```
-nohup <PATH_TO_DNAFOLD>/dnafold input.txt >> report.out &`
+nohup <PATH_TO_DNAFOLD>/dnafold input.txt >> report.out 2>&1 &
 ```
 
 The simulation should then begin!
