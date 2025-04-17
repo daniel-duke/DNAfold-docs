@@ -48,7 +48,7 @@ mkdir <MYSIM>
 cd <MYSIM>
 ```
 
-Add the caDNAno design (see {doc}`caDNAno Examples`) and the parameters file (see {doc}`Parameter Descriptions`) to the folder. Make sure the parameters file correctly references the name of your caDNAno design.
+Add the caDNAno design (see {doc}`page_cadnano_ex`) and the parameters file (see {doc}`page_params`) to the folder. Make sure the parameters file correctly references the name of your caDNAno design.
 
 Finally, run the following command to begin the simulation, making sure to substitute `<PATH_TO_DNAFOLD>` with the path to the `dnafold` executable created earlier.
 

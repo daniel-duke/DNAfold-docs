@@ -52,6 +52,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="page_params.html">Parameter Descriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="page_cadnano_ex.html">caDNAno Examples</a></li>
 </ul>
 
         </div>
@@ -121,13 +122,13 @@
 <span class="n">cd</span> <span class="o">&lt;</span><span class="n">MYSIM</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>Add the caDNAno design (see <span class="xref std std-doc">caDNAno Examples</span>) and the parameters file (see <span class="xref std std-doc">Parameter Descriptions</span>) to the folder. Make sure the parameters file correctly references the name of your caDNAno design.</p>
+<p>Add the caDNAno design (see <a class="reference internal" href="page_cadnano_ex.html"><span class="doc">caDNAno Examples</span></a>) and the parameters file (see <a class="reference internal" href="page_params.html"><span class="doc">Parameter Descriptions</span></a>) to the folder. Make sure the parameters file correctly references the name of your caDNAno design.</p>
 <p>Finally, run the following command to begin the simulation, making sure to substitute <code class="docutils literal notranslate"><span class="pre">&lt;PATH_TO_DNAFOLD&gt;</span></code> with the path to the <code class="docutils literal notranslate"><span class="pre">dnafold</span></code> executable created earlier.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">PATH_TO_DNAFOLD</span><span class="o">&gt;/</span><span class="n">dnafold</span> <span class="nb">input</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 <p>To run the program in the background and save the standard output to a file, use the following command:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>nohup &lt;PATH_TO_DNAFOLD&gt;/dnafold input.txt &gt;&gt; report.out &amp;`
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nohup</span> <span class="o">&lt;</span><span class="n">PATH_TO_DNAFOLD</span><span class="o">&gt;/</span><span class="n">dnafold</span> <span class="nb">input</span><span class="o">.</span><span class="n">txt</span> <span class="o">&gt;&gt;</span> <span class="n">report</span><span class="o">.</span><span class="n">out</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span> <span class="o">&amp;</span>
 </pre></div>
 </div>
 <p>The simulation should then begin!</p>

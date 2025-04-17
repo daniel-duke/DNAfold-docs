@@ -1,6 +1,7 @@
 # Parameter Descriptions
 
-Parameters are set by adding their values to an input file using the "key = value" form. This file must then be passed as an argument to the to the `dnafold` executable when running the code (see {doc}`Running the Code`).
+Parameters are set by adding their values to an input file using the "key = value" form. This file must then be passed as an argument to the to the `dnafold` executable when running the code (see {doc}`page_run_code`).
+datasets/
 
 Parameters surrounded in [ brackets ] are optional. The value after "=" denotes the default value, which are set in `src/parameters.hpp` file. For parameters with a finite number of acceptable values, the possible values are separated by "|" in parentheses beside the parameter.
 
@@ -20,7 +21,7 @@ Unless noted otherwise, all numerical values in the code use the corresponding u
 
 **inFile**
 
-The `.json` file from caDNAno describing the structure of the origami. See {doc}`caDNAno Examples` for a guide on creating compatible caDNAno structures.
+The `.json` file from caDNAno describing the structure of the origami. See {doc}`page_cadnano_ex` for a guide on creating compatible caDNAno structures.
 
 **outFile**
 

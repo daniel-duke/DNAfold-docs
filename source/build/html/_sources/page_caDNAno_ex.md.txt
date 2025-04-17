@@ -4,7 +4,7 @@ DNAfold requires caDNAno files (`.json`) to define the structure of the DNA orig
 
 In order to simulate DNA origami using DNAfold, the caDNAno design must fulfill two requirements: 
 
-- For computational reasons, the scaffold strand must contain a break at some point in the strand. This applies to both linear and circular scaffolds. Whether the scaffold is actually circular or linear can be specified in the input file, as explained in {doc}`Parameter Descriptions`.
+- For computational reasons, the scaffold strand must contain a break at some point in the strand. This applies to both linear and circular scaffolds. Whether the scaffold is actually circular or linear can be specified in the input file, as explained in {doc}`page_params`.
 - Each crossover and strand break must be separated by a multiple of 8 bp. This is because DNAfold coarsens the DNA into beads, each of which represent exactly 8 bp, no more, no less. If a caDNAno design contains a crossover or strand break at a non-integer multiple of 8 bp away from another crossover or strand break, DNAfold will attempt to place a bead over the crossover or strand break, causing the code to throw an error.
 
 To make adherence to the multiple of 8 rule simple when designing a DNA origami structure, first choose the square grid option in caDNAno. Notice that becuase square lattice origamis naturally have crossover opportunities at multiples of 8 bp, the grid in caDNAno has bold vertical bars every 8 bp. When drawing your scaffold and staple strands on the grid, simply ensure all crossovers and strand breaks fall across one of these bold bars.
