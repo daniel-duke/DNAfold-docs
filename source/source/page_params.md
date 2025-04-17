@@ -1,7 +1,6 @@
 # Parameter Descriptions
 
 Parameters are set by adding their values to an input file using the "key = value" form. This file must then be passed as an argument to the to the `dnafold` executable when running the code (see {doc}`page_run_code`).
-datasets/
 
 Parameters surrounded in [ brackets ] are optional. The value after "=" denotes the default value, which are set in `src/parameters.hpp` file. For parameters with a finite number of acceptable values, the possible values are separated by "|" in parentheses beside the parameter.
 
