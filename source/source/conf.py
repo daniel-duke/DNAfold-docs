@@ -24,4 +24,5 @@ templates_path = ['_templates']
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'sphinx_rtd_theme'
+html_extra_path = ['_extra']
 html_titla = 'DNAfold Documentation'
